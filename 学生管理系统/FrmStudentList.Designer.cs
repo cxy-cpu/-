@@ -32,6 +32,7 @@ namespace 学生管理系统
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +44,10 @@ namespace 学生管理系统
             this.StuJName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,16 @@ namespace 学生管理系统
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(691, 35);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnFind
             // 
@@ -120,6 +131,7 @@ namespace 学生管理系统
             this.StuJName,
             this.ClassName,
             this.Sex,
+            this.Adress,
             this.Phone,
             this.colEdit,
             this.colDel});
@@ -170,6 +182,14 @@ namespace 学生管理系统
             this.Sex.Name = "Sex";
             this.Sex.ReadOnly = true;
             // 
+            // Adress
+            // 
+            this.Adress.DataPropertyName = "Adress";
+            this.Adress.HeaderText = "籍贯";
+            this.Adress.MinimumWidth = 6;
+            this.Adress.Name = "Adress";
+            this.Adress.ReadOnly = true;
+            // 
             // Phone
             // 
             this.Phone.DataPropertyName = "Phone";
@@ -193,16 +213,6 @@ namespace 学生管理系统
             this.colDel.HeaderText = "删除";
             this.colDel.MinimumWidth = 6;
             this.colDel.Name = "colDel";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(691, 35);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "删除";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FrmStudentList
             // 
@@ -231,14 +241,15 @@ namespace 学生管理系统
         private System.Windows.Forms.TextBox txtStuName;
         private System.Windows.Forms.ComboBox cboClasses;
         private System.Windows.Forms.DataGridView dgvStudents;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colCheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuJName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewLinkColumn colEdit;
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
-        private System.Windows.Forms.Button btnDelete;
     }
 }

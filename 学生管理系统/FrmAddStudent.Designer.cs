@@ -40,6 +40,8 @@ namespace 学生管理系统
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAdress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtStuName
@@ -52,7 +54,7 @@ namespace 学生管理系统
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 56);
+            this.label1.Location = new System.Drawing.Point(109, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 1;
@@ -61,7 +63,7 @@ namespace 学生管理系统
             // cboClasses
             // 
             this.cboClasses.FormattingEnabled = true;
-            this.cboClasses.Location = new System.Drawing.Point(167, 128);
+            this.cboClasses.Location = new System.Drawing.Point(167, 103);
             this.cboClasses.Name = "cboClasses";
             this.cboClasses.Size = new System.Drawing.Size(193, 23);
             this.cboClasses.TabIndex = 2;
@@ -69,7 +71,7 @@ namespace 学生管理系统
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(108, 128);
+            this.label2.Location = new System.Drawing.Point(109, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 3;
@@ -78,7 +80,7 @@ namespace 学生管理系统
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 193);
+            this.label3.Location = new System.Drawing.Point(109, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 4;
@@ -87,7 +89,7 @@ namespace 学生管理系统
             // rbtMale
             // 
             this.rbtMale.AutoSize = true;
-            this.rbtMale.Location = new System.Drawing.Point(179, 189);
+            this.rbtMale.Location = new System.Drawing.Point(194, 158);
             this.rbtMale.Name = "rbtMale";
             this.rbtMale.Size = new System.Drawing.Size(43, 19);
             this.rbtMale.TabIndex = 5;
@@ -98,7 +100,7 @@ namespace 学生管理系统
             // rbtFemale
             // 
             this.rbtFemale.AutoSize = true;
-            this.rbtFemale.Location = new System.Drawing.Point(268, 189);
+            this.rbtFemale.Location = new System.Drawing.Point(285, 160);
             this.rbtFemale.Name = "rbtFemale";
             this.rbtFemale.Size = new System.Drawing.Size(43, 19);
             this.rbtFemale.TabIndex = 6;
@@ -109,7 +111,7 @@ namespace 学生管理系统
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 260);
+            this.label4.Location = new System.Drawing.Point(109, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 7;
@@ -142,11 +144,30 @@ namespace 学生管理系统
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(109, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 15);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "籍贯：";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // txtAdress
+            // 
+            this.txtAdress.Location = new System.Drawing.Point(167, 210);
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(193, 25);
+            this.txtAdress.TabIndex = 12;
+            // 
             // FrmAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(479, 400);
+            this.Controls.Add(this.txtAdress);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtPhone);
@@ -181,5 +202,7 @@ namespace 学生管理系统
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtAdress;
     }
 }

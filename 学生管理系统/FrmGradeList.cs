@@ -168,7 +168,7 @@ namespace 学生管理系统
                 else if (cell is DataGridViewLinkCell && cell.FormattedValue.ToString() == "删除")
                 {
                     if (MessageBox.Show("您确定要删除该年级以及相关的班级和学生信息吗？", "删除年级提示",
-                      MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
+                      MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                     {
 
                         //班级删除的过程 学生--班级--年级 先删除学生--在删除班级--最后年级

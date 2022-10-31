@@ -44,9 +44,11 @@ namespace 学生管理系统
 
         private void LoadAllStudentList()
         {
-            string sql = "select StuID,StuName,ClassName,GradeName,Sex,Phone from StudentInfo s, ClassInfo c,GradeInfo g  " +
-                " where c.ClassID=s.ClassID and c.GradeID = g.GradeID ";
-               
+            string sql = "select StuId,StuName,ClassName,GradeName,Sex,Phone from StudentInfo s inner join ClassInfo c on c.ClassID = s.ClassID" +
+                " inner join GradeInfo g on g.GradeID = c.GradeID " ;
+            //"select StuID,StuName,ClassName,GradeName,Sex,Phone,Adress from StudentInfo s, ClassInfo c,GradeInfo g  " +
+            // " where c.ClassID=s.ClassID and c.GradeID = g.GradeID ";
+
 
             //加载数据
             DataTable dtStudents = SqlHelper.GetDataTable(sql);

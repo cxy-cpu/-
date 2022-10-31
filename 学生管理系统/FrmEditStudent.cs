@@ -43,7 +43,7 @@ namespace 学生管理系统
                 reLoad = tagObject.ReLoad;//赋值
             }
             //查询数据
-            string sql = "select StuName,Sex,ClassId,Phone from StudentInfo where StuId=@StuId";
+            string sql = "select StuName,Sex,ClassId,Phone,Adress from StudentInfo where StuId=@StuId";
             SqlParameter paraId = new SqlParameter("@StuId", stuId);
             SqlDataReader dr = SqlHelper.ExecuteReader(sql, paraId);
             //读取数据  只能向前 不能后退 读一条丢一条
@@ -52,6 +52,7 @@ namespace 学生管理系统
                 txtStuName.Text = dr["StuName"].ToString();
                 txtPhone.Text = dr["Phone"].ToString();
                 string sex = dr["Sex"].ToString();
+                string adress = dr["Adress"].ToString();
                 if (sex == "男")
                     rbtMale.Checked = true;
                 else
@@ -98,6 +99,7 @@ namespace 学生管理系统
             int classId = (int)cboClasses.SelectedValue;
             string sex = rbtMale.Checked ? rbtMale.Text : rbtFemale.Text;//三目运算符，只能选中一个性别
             string phone = txtPhone.Text.Trim();
+            string adress = txtAdress.Text.Trim();
             //判空处理
             if (string.IsNullOrEmpty(stuName))
             {
@@ -110,11 +112,12 @@ namespace 学生管理系统
                 return;
             }
             //判断是否存在 姓名+电话 除这个同学自己，其他同学中是否存在
-            string sql = "select count(1) from StudentInfo where StuName=@StuName  and Phone=@phone and StuId<>@StuId";
+            string sql = "select count(1) from StudentInfo where StuName=@StuName  and Phone=@phone and Adress=@Adress and StuId<>@StuId";
             SqlParameter[] paras =
             {
                 new SqlParameter("@StuName",stuName),
                 new SqlParameter("@phone",phone),
+                new SqlParameter("@Adress",adress),
                 new SqlParameter("@StuId",stuId)
             };
             object o = SqlHelper.ExecuteScalar(sql, paras);
@@ -124,13 +127,14 @@ namespace 学生管理系统
                 return;
             }
             //修改
-            string sqlUpdate = "Update StudentInfo set StuName=@StuName,Sex=@Sex,ClassId=@ClassId,Phone=@Phone where StuId=@StuId";
+            string sqlUpdate = "Update StudentInfo set StuName=@StuName,Sex=@Sex,ClassId=@ClassId,Phone=@Phone,Adress=@Adress where StuId=@StuId";
             SqlParameter[] parasUpdate =
             {
                 new SqlParameter("@StuName",stuName),
                 new SqlParameter("@ClassID",classId),
                 new SqlParameter("@Sex",sex),
                 new SqlParameter("@Phone",phone),
+                new SqlParameter("@Adress",adress),
                 new SqlParameter("@StuId",stuId)
             };
             int count = SqlHelper.ExecuteNonQuery(sqlUpdate, parasUpdate);
